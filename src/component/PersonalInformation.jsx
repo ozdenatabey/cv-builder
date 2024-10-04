@@ -18,7 +18,7 @@ import {
 function PersonalInformation() {
   return (
     <div className="text-base text-sm space-y-1 p-4">
-      <p className="font-bold text-lg underline underline-offset-2">
+      <p className="font-bold text-lg underline underline-offset-2 mb-4">
         PERSONAL INFORMATION
       </p>
       {personalInformation.location ? (

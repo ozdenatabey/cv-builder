@@ -2,9 +2,9 @@ import { header } from "../../data/userData";
 
 function Header() {
   return (
-    <div>
-      <p className="bg-red-800 text-2xl font-bold">{header.name}</p>
-      <p className="bg-red-500 text-lg font-semibold">{header.jobTitle}</p>
+    <div className="space-y-3 m-4 mt-6">
+      <p className="text-5xl text-header font-bold">{header.name}</p>
+      <p className=" text-primary font-semibold">{header.jobTitle}</p>
     </div>
   );
 }

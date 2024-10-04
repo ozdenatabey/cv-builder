@@ -1,6 +1,6 @@
 export const header = {
   name: "Özden Atabey",
-  jobTitle: "Mechanical Engineer",
+  jobTitle: "Mechanical Engineer | Frontend Developer | Business Analyst",
 };
 
 export const personalInformation = {
@@ -17,6 +17,25 @@ export const personalInformation = {
   drivingLicense: "Yes",
   military: "Completed",
 };
+
+export const aboutMe = [
+  {
+    id: 1,
+    name: "Curious about new technologies",
+  },
+  {
+    id: 2,
+    name: "Researcher",
+  },
+  {
+    id: 3,
+    name: "Solution oriented",
+  },
+  {
+    id: 4,
+    name: "Strong communication",
+  },
+];
 
 export const engineeringTools = [
   {
