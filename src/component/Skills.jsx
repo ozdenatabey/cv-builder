@@ -16,7 +16,7 @@ function Skills() {
         </div>
         {engineeringTools.map((skill) => (
           <div
-            key={skill.index}
+            key={skill.id}
             className="flex justify-between text-base text-sm mx-4"
           >
             <p>- {skill.name}</p>
@@ -37,7 +37,7 @@ function Skills() {
         </div>
         {programmingTools.map((skill) => (
           <div
-            key={skill.index}
+            key={skill.id}
             className="flex justify-between text-base text-sm mx-4"
           >
             <p>- {skill.name}</p>

@@ -12,15 +12,16 @@ function App() {
           <div className="w-2/6">
             <SideMenu />
           </div>
-          <div>
+          <div className="w-4/6 p-4 space-y-6">
             <Header />
             <AboutMe />
             <Experience />
-            <References />
           </div>
         </div>
       </div>
-      <div id="page2" className="bg-white m-auto h-[297mm] w-[210mm]"></div>
+      <div id="page2" className="bg-white m-auto h-[297mm] w-[210mm]">
+        <References />
+      </div>
     </div>
   );
 }

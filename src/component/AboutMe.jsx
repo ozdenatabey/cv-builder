@@ -3,7 +3,7 @@ import { aboutMe } from "../../data/userData";
 
 function AboutMe() {
   return (
-    <div className="mx-4 text-primary">
+    <div className="text-primary">
       <p className="font-bold text-2xl mb-1 underline decoration-header decoration-2">
         ABOUT ME
       </p>
