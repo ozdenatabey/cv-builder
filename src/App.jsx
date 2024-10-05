@@ -6,8 +6,8 @@ import SideMenu from "./component/SideMenu";
 
 function App() {
   return (
-    <div className="bg-blue-300">
-      <div id="page1" className="bg-base m-auto h-[297mm] w-[210mm] mb-5">
+    <div className="grid place-items-center bg-gray-500">
+      <main id="page1" className="bg-base m-6 h-[297mm] w-[210mm]">
         <div className="flex">
           <div className="w-2/6">
             <SideMenu />
@@ -18,10 +18,15 @@ function App() {
             <Experience />
           </div>
         </div>
-      </div>
-      <div id="page2" className="bg-white m-auto h-[297mm] w-[210mm]">
-        <References />
-      </div>
+      </main>
+      <main
+        id="page2"
+        className="bg-primary mb-6 h-[297mm] w-[210mm] grid place-items-center"
+      >
+        <div className="bg-base w-[200mm] h-[287mm] rounded-lg">
+          <References />
+        </div>
+      </main>
     </div>
   );
 }
