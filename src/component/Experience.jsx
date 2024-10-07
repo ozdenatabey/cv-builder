@@ -17,7 +17,7 @@ function Experience() {
           <div className="p-3">
             <p className="text-header text-lg font-bold">{experience.title}</p>
             <p className="font-semibold text-lg">{experience.company}</p>
-            <p className="text-nowrap">{experience.content}</p>
+            <p>{experience.content}</p>
           </div>
         </div>
       ))}
