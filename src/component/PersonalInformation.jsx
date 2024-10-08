@@ -1,4 +1,4 @@
-import { personalInformation } from "../../data/userData";
+import { personalInformation } from "../data/userData";
 import { PiMapPinFill } from "react-icons/pi";
 import {
   FaCar,
@@ -15,9 +15,10 @@ import {
   FaFlag,
 } from "react-icons/fa";
 
-function PersonalInformation() {
+// eslint-disable-next-line react/prop-types
+function PersonalInformation({ theme }) {
   return (
-    <div className="text-base text-sm space-y-1 p-4">
+    <div className={`text-${theme}-base text-sm space-y-1 p-4`}>
       <p className="font-bold text-lg underline underline-offset-2 mb-4">
         PERSONAL INFORMATION
       </p>

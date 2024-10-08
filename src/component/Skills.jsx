@@ -1,11 +1,12 @@
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
-import { engineeringTools, programmingTools } from "../../data/userData";
+import { engineeringTools, programmingTools } from "../data/userData";
 import { FaCode, FaGear } from "react-icons/fa6";
 
-function Skills() {
+// eslint-disable-next-line react/prop-types
+function Skills({ theme }) {
   return (
-    <div className="text-base mx-4 space-y-4">
+    <div className={`text-${theme}-base mx-4 space-y-4`}>
       <p className="text-center text-lg font-bold underline underline-offset-2">
         SKILLS
       </p>
@@ -17,7 +18,7 @@ function Skills() {
         {engineeringTools.map((skill) => (
           <div
             key={skill.id}
-            className="flex justify-between text-base text-sm mx-4"
+            className={`flex justify-between text-${theme}-base text-sm mx-4`}
           >
             <p>- {skill.name}</p>
             <Rating
@@ -38,7 +39,7 @@ function Skills() {
         {programmingTools.map((skill) => (
           <div
             key={skill.id}
-            className="flex justify-between text-base text-sm mx-4"
+            className={`flex justify-between text-${theme}-base text-sm mx-4`}
           >
             <p>- {skill.name}</p>
             <Rating

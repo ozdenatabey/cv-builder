@@ -1,10 +1,12 @@
-import { header } from "../../data/userData";
+import { header } from "../data/userData";
 
-function Header() {
+// eslint-disable-next-line react/prop-types
+function Header({ theme }) {
+  console.log(theme);
   return (
     <div className="space-y-3 my-6">
-      <p className="text-5xl text-header font-bold">{header.name}</p>
-      <p className=" text-primary font-semibold">{header.jobTitle}</p>
+      <p className={`text-5xl text-${theme}-header font-bold`}>{header.name}</p>
+      <p className={`text-${theme}-primary font-semibold`}>{header.jobTitle}</p>
     </div>
   );
 }

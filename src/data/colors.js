@@ -1,0 +1,51 @@
+export const colors = [
+  {
+    id: "color1",
+    primary: "#373A40",
+    header: "#DC5F00",
+    border: "#686D76",
+    base: "#EEEEEE",
+  },
+  {
+    id: "color2",
+    primary: "#384B70",
+    header: "#B8001F",
+    border: "#507687",
+    base: "#FCFAEE",
+  },
+  {
+    id: "color3",
+    primary: "#4A4947",
+    header: "#B17457",
+    border: "#D8D2C2",
+    base: "#FAF7F0",
+  },
+  {
+    id: "color4",
+    primary: "#12372A",
+    header: "#436850",
+    border: "#ADBC9F",
+    base: "#FBFADA",
+  },
+  {
+    id: "color5",
+    primary: "#222831",
+    header: "#00ADB5",
+    border: "#393E46",
+    base: "#EEEEEE",
+  },
+  {
+    id: "color6",
+    primary: "#384B70",
+    header: "#B8001F",
+    border: "#507687",
+    base: "#FCFAEE",
+  },
+  {
+    id: "color7",
+    primary: "#440505",
+    header: "#D90000",
+    border: "#454545",
+    base: "#D9D9D9",
+  },
+];
