@@ -36,10 +36,10 @@ export const colors = [
   },
   {
     id: "color6",
-    primary: "#384B70",
-    header: "#B8001F",
-    border: "#507687",
-    base: "#FCFAEE",
+    primary: "#201E43",
+    header: "#134B70",
+    border: "#508C9B",
+    base: "#EEEEEE",
   },
   {
     id: "color7",
@@ -47,5 +47,12 @@ export const colors = [
     header: "#D90000",
     border: "#454545",
     base: "#D9D9D9",
+  },
+  {
+    id: "color8",
+    primary: "#252A34",
+    header: "#FF2E63",
+    border: "#524847",
+    base: "#EAEAEA",
   },
 ];

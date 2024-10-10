@@ -16,11 +16,11 @@ import {
 } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
-function PersonalInformation({ theme }) {
+function PersonalInformation({ theme, language }) {
   return (
     <div className={`text-${theme}-base text-sm space-y-1 p-4`}>
-      <p className="font-bold text-lg underline underline-offset-2 mb-4">
-        PERSONAL INFORMATION
+      <p className="font-bold text-lg text-center underline underline-offset-2 mb-4">
+        {language === "en" ? "PERSONAL INFORMATION" : "KİŞİSEL BİLGİLER"}
       </p>
       {personalInformation.location ? (
         <div className="flex items-center">
@@ -76,7 +76,9 @@ function PersonalInformation({ theme }) {
       {personalInformation.dateOfBirth ? (
         <div className="flex items-center">
           <FaBirthdayCake className="mr-2" />
-          <p className="mr-2 font-semibold">Date of Birth:</p>
+          <p className="mr-2 font-semibold">
+            {language === "en" ? "Date of Birth:" : "Doğum Tarihi:"}
+          </p>
           <p>{personalInformation.dateOfBirth}</p>
         </div>
       ) : (
@@ -85,7 +87,9 @@ function PersonalInformation({ theme }) {
       {personalInformation.nationality ? (
         <div className="flex items-center">
           <FaFlag className="mr-2" />
-          <p className="mr-2 font-semibold">Nationality:</p>
+          <p className="mr-2 font-semibold">
+            {language === "en" ? "Nationality:" : "Uyruk:"}
+          </p>
           <p>{personalInformation.nationality}</p>
         </div>
       ) : (
@@ -94,7 +98,9 @@ function PersonalInformation({ theme }) {
       {personalInformation.disability ? (
         <div className="flex items-center">
           <FaWheelchair className="mr-2" />
-          <p className="mr-2 font-semibold">Disability:</p>
+          <p className="mr-2 font-semibold">
+            {language === "en" ? "Disability:" : "Engellilik:"}
+          </p>
           <p>{personalInformation.disability}</p>
         </div>
       ) : (
@@ -103,7 +109,9 @@ function PersonalInformation({ theme }) {
       {personalInformation.drivingLicense ? (
         <div className="flex items-center">
           <FaCar className="mr-2" />
-          <p className="mr-2 font-semibold">Driving License:</p>
+          <p className="mr-2 font-semibold">
+            {language === "en" ? "Driving License:" : "Sürücü Belgesi:"}
+          </p>
           <p>{personalInformation.drivingLicense}</p>
         </div>
       ) : (
@@ -112,7 +120,9 @@ function PersonalInformation({ theme }) {
       {personalInformation.military ? (
         <div className="flex items-center">
           <FaPersonMilitaryRifle className="mr-2" />
-          <p className="mr-2 font-semibold">Military Service:</p>
+          <p className="mr-2 font-semibold">
+            {language === "en" ? "Military Service:" : "Askerlik Hizmeti:"}
+          </p>
           <p>{personalInformation.military}</p>
         </div>
       ) : (

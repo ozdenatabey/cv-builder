@@ -1,13 +1,13 @@
 import { experiences } from "../data/userData";
 
 // eslint-disable-next-line react/prop-types
-function Experience({ theme }) {
+function Experience({ theme, language }) {
   return (
     <div className={`text-${theme}-primary`}>
       <p
         className={`font-bold text-2xl mb-2 underline decoration-${theme}-header decoration-2`}
       >
-        WORK EXPERIENCE
+        {language === "en" ? "WORK EXPERIENCE" : "İŞ DENEYİMİ"}
       </p>
       {experiences.map((experience) => (
         <div
