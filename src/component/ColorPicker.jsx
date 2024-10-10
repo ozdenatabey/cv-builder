@@ -10,12 +10,14 @@ function ColorPicker({ onThemeSelect, language }) {
   return (
     <>
       {language === "en" && (
-        <p className="text-xl font-bold">Pick Color Theme</p>
+        <p className="text-xl font-bold text-center mt-4">Pick Color Theme</p>
       )}
       {language === "tr" && (
-        <p className="text-xl font-bold">Tema Rengini Seçiniz</p>
+        <p className="text-xl font-bold text-center mt-4">
+          Tema Rengini Seçiniz
+        </p>
       )}
-      <div className="flex space-x-4 mt-4">
+      <div className="flex space-x-4 my-4">
         {colors.map((color) => (
           <div key={color.id}>
             <div
