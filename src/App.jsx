@@ -31,7 +31,7 @@ function App() {
     }
   }, [pageCount]);
   return (
-    <body className="bg-gray-100">
+    <div className="bg-gray-100">
       <div className="absolute right-10 top-4">
         <LanguageSelect onClick={handleLanguageSelect} />
       </div>
@@ -58,7 +58,7 @@ function App() {
           </div>
         </section>
       </main>
-    </body>
+    </div>
   );
 }
 
