@@ -3,6 +3,7 @@ import ColorPicker from "./component/ColorPicker";
 import LanguageSelect from "./component/LanguageSelect";
 import Form from "./component/Form";
 import Page from "./component/Page";
+import { useReactToPrint } from "react-to-print";
 
 function App() {
   // DİL SEÇİMİ
@@ -30,6 +31,18 @@ function App() {
       return;
     }
   }, [pageCount]);
+
+  // PDF OLARAK İNDİRME
+  const pageRef = useRef();
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const reactToPrintFn = useReactToPrint({
+    contentRef: pageRef,
+    documentTitle: `CV-${day}.${month}.${year}`,
+  });
+
   return (
     <div className="bg-gray-100">
       <div className="absolute right-10 top-4">
@@ -42,13 +55,16 @@ function App() {
         <section id="leftSide" className="w-2/5">
           <Form theme={selectedTheme} language={language} />
           <div className="flex justify-center my-4">
-            <button className="bg-neutral-700 text-white font-semibold text-lg w-36 py-3 rounded-lg hover:bg-neutral-800 active:scale-[0.97]">
+            <button
+              onClick={reactToPrintFn}
+              className="bg-neutral-700 text-white font-semibold text-lg w-36 py-3 rounded-lg hover:bg-neutral-800 active:scale-[0.97]"
+            >
               {language === "en" ? "Download" : "İndir"}
             </button>
           </div>
         </section>
         <section id="rightSide" className="w-3/5">
-          <div className="grid place-items-center">
+          <div ref={pageRef} className="grid place-items-center">
             <Page
               theme={selectedTheme}
               language={language}
