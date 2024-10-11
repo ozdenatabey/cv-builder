@@ -57,7 +57,7 @@ function App() {
           <div className="flex justify-center my-4">
             <button
               onClick={reactToPrintFn}
-              className="bg-neutral-700 text-white font-semibold text-lg w-36 py-3 rounded-lg hover:bg-neutral-800 active:scale-[0.97]"
+              className={`bg-${selectedTheme}-primary text-white font-semibold text-lg w-36 py-3 rounded-lg hover:shadow-lg hover:shadow-black/50 active:scale-[0.97]`}
             >
               {language === "en" ? "Download" : "İndir"}
             </button>
