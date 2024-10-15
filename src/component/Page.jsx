@@ -3,6 +3,7 @@ import Header from "./Header";
 import AboutMe from "./AboutMe";
 import Experience from "./Experience";
 import References from "./References";
+import Projects from "./Projects";
 
 // eslint-disable-next-line react/prop-types
 function Page({ theme, language, myRef, pageCount }) {
@@ -24,16 +25,19 @@ function Page({ theme, language, myRef, pageCount }) {
             </div>
           </div>
         </div>
-        {pageCount === 2 && (
+        {/* {pageCount === 2 && ( */}
+        <div
+          id="page2"
+          className={`bg-${theme}-primary mb-6 h-[297mm] w-[210mm] grid place-items-center shadow shadow-black overflow-hidden`}
+        >
           <div
-            id="page2"
-            className={`bg-${theme}-primary mb-6 h-[297mm] w-[210mm] grid place-items-center shadow shadow-black overflow-hidden`}
+            className={`bg-${theme}-base w-[200mm] h-[287mm] rounded-lg p-4`}
           >
-            <div className={`bg-${theme}-base w-[200mm] h-[287mm] rounded-lg`}>
-              <References />
-            </div>
+            <Projects theme={theme} language={language} />
+            <References theme={theme} language={language} />
           </div>
-        )}
+        </div>
+        {/* )} */}
       </div>
     </>
   );
