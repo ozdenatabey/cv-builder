@@ -4,7 +4,7 @@ import themeReducer from "./slices/themeSlice";
 
 export const store = configureStore({
   reducer: {
-    formSlice: formReducer,
-    themeSlice: themeReducer,
+    form: formReducer,
+    theme: themeReducer,
   },
 });

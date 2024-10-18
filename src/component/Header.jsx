@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 // eslint-disable-next-line react/prop-types
 function Header({ theme }) {
-  const { name, title } = useSelector((state) => state.formSlice);
+  const { name, title } = useSelector((state) => state.form);
 
   return (
     <div className="space-y-3 my-6">

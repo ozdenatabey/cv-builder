@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import { setName, setTitle } from "../../features/formSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setName, setTitle } from "../../redux/slices/formSlice";
 
 function HeaderForm() {
   const dispatch = useDispatch();
@@ -9,10 +9,13 @@ function HeaderForm() {
   const handleTitleChange = (event) => {
     dispatch(setTitle(event.target.value));
   };
+  const { color } = useSelector((state) => state.theme);
   return (
     <div>
       <form className="mx-4 space-y-2 border border-black p-4 rounded-lg shadow-lg">
-        <p className="text-center font-semibold bg-neutral-600 p-1 rounded-md text-white">
+        <p
+          className={`text-center font-semibold bg-${color}-primary p-1 rounded-md text-white`}
+        >
           Header
         </p>
         <div>
