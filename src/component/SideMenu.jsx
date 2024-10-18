@@ -1,11 +1,13 @@
 import PersonalInformation from "./PersonalInformation";
 import Skills from "./Skills";
 import imgUrl from "../assets/userImage.jpg";
+import { useSelector } from "react-redux";
 
 // eslint-disable-next-line react/prop-types
-function SideMenu({ theme, language }) {
+function SideMenu({ language }) {
+  const { color } = useSelector((state) => state.theme);
   return (
-    <div className={`h-[297mm] bg-${theme}-primary space-y-12`}>
+    <div className={`h-[297mm] bg-${color}-primary space-y-12`}>
       <div className="w-4/5 m-auto pt-5">
         <img
           src={imgUrl}
@@ -13,8 +15,8 @@ function SideMenu({ theme, language }) {
           className="rounded-[3rem] shadow-2xl"
         />
       </div>
-      <PersonalInformation theme={theme} language={language} />
-      <Skills theme={theme} language={language} />
+      <PersonalInformation language={language} />
+      <Skills language={language} />
     </div>
   );
 }

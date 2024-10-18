@@ -4,17 +4,14 @@ import LanguageSelect from "./component/LanguageSelect";
 import Form from "./component/Form";
 import Page from "./component/Page";
 import { useReactToPrint } from "react-to-print";
+import { useSelector } from "react-redux";
 
 function App() {
+  const { color } = useSelector((state) => state.theme);
   // DİL SEÇİMİ
   const [language, setLanguage] = useState("tr");
   const handleLanguageSelect = (lang) => {
     setLanguage(lang);
-  };
-  // TEMA SEÇİMİ
-  const [selectedTheme, setSelectedTheme] = useState("color1");
-  const handleThemeSelect = (theme) => {
-    setSelectedTheme(theme);
   };
   // SAYFA YÜKSEKLİK HESABI VE İKİNCİ SAYFAYI OTOMATİK OLUŞTURMA
   const [pageCount, setPageCount] = useState(1);
@@ -49,15 +46,15 @@ function App() {
         <LanguageSelect onClick={handleLanguageSelect} />
       </div>
       <div className="grid place-content-center">
-        <ColorPicker onThemeSelect={handleThemeSelect} language={language} />
+        <ColorPicker language={language} />
       </div>
       <main className=" flex justify-between">
         <section id="leftSide" className="w-2/5">
-          <Form theme={selectedTheme} language={language} />
+          <Form language={language} />
           <div className="flex justify-center my-4">
             <button
               onClick={reactToPrintFn}
-              className={`bg-${selectedTheme}-primary text-white font-semibold text-lg w-36 py-3 rounded-lg hover:shadow-lg hover:shadow-black/50 active:scale-[0.97]`}
+              className={`bg-${color}-primary text-white font-semibold text-lg w-36 py-3 rounded-lg hover:shadow-lg hover:shadow-black/50 active:scale-[0.97]`}
             >
               {language === "en" ? "Download" : "İndir"}
             </button>
@@ -65,12 +62,7 @@ function App() {
         </section>
         <section id="rightSide" className="w-3/5">
           <div ref={pageRef} className="grid place-items-center">
-            <Page
-              theme={selectedTheme}
-              language={language}
-              myRef={myRef}
-              pageCount={pageCount}
-            />
+            <Page language={language} myRef={myRef} pageCount={pageCount} />
           </div>
         </section>
       </main>

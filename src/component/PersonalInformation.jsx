@@ -14,11 +14,13 @@ import {
   FaBirthdayCake,
   FaFlag,
 } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 // eslint-disable-next-line react/prop-types
-function PersonalInformation({ theme, language }) {
+function PersonalInformation({ language }) {
+  const { color } = useSelector((state) => state.theme);
   return (
-    <div className={`text-${theme}-base text-sm space-y-1 p-4`}>
+    <div className={`text-${color}-base text-sm space-y-1 p-4`}>
       <p className="font-bold text-lg text-center underline underline-offset-2 mb-4">
         {language === "en" ? "PERSONAL INFORMATION" : "KİŞİSEL BİLGİLER"}
       </p>

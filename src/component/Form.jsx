@@ -1,6 +1,6 @@
 import HeaderForm from "./inputs/headerForm";
 
-function Form({ theme, language }) {
+function Form() {
   return (
     <div>
       <HeaderForm />
