@@ -2,9 +2,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { references } from "../data/userData";
 import { useSelector } from "react-redux";
 
-// eslint-disable-next-line react/prop-types
-function References({ language }) {
-  const { color } = useSelector((state) => state.theme);
+function References() {
+  const { color, language } = useSelector((state) => state.theme);
   return (
     <div className={`text-${color}-primary`}>
       <p

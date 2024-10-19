@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
 import { experiences } from "../data/userData";
 
-// eslint-disable-next-line react/prop-types
-function Experience({ language }) {
-  const { color } = useSelector((state) => state.theme);
+function Experience() {
+  const { color, language } = useSelector((state) => state.theme);
   return (
     <div className={`text-${color}-primary`}>
       <p

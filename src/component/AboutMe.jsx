@@ -2,9 +2,8 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import { aboutMe } from "../data/userData";
 import { useSelector } from "react-redux";
 
-// eslint-disable-next-line react/prop-types
-function AboutMe({ language }) {
-  const { color } = useSelector((state) => state.theme);
+function AboutMe() {
+  const { color, language } = useSelector((state) => state.theme);
   return (
     <div className={`text-${color}-primary`}>
       <p

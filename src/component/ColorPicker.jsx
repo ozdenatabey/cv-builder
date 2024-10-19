@@ -1,13 +1,13 @@
 import { colors } from "../data/colors";
 import { setTheme } from "../redux/slices/themeSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-// eslint-disable-next-line react/prop-types
-function ColorPicker({ language }) {
+function ColorPicker() {
   const dispatch = useDispatch();
   const handleClick = (color) => {
     dispatch(setTheme(color.id));
   };
+  const { language } = useSelector((state) => state.theme);
 
   return (
     <>

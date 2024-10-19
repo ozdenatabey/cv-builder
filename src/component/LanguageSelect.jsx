@@ -1,10 +1,12 @@
 import trFlag from "../assets/trFlag.jpg";
 import enFlag from "../assets/enFlag.png";
+import { useDispatch } from "react-redux";
+import { setLanguage } from "../redux/slices/themeSlice";
 
-// eslint-disable-next-line react/prop-types
-function LanguageSelect({ onClick }) {
+function LanguageSelect() {
+  const dispatch = useDispatch();
   const handleClick = (langId) => {
-    onClick(langId);
+    dispatch(setLanguage(langId));
   };
   return (
     <div>

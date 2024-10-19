@@ -1,4 +1,4 @@
-import HeaderForm from "./inputs/headerForm";
+import HeaderForm from "./inputs/HeaderForm";
 
 function Form() {
   return (

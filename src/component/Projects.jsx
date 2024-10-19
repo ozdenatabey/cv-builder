@@ -1,9 +1,8 @@
 import { projects } from "../data/userData";
 import { useSelector } from "react-redux";
 
-// eslint-disable-next-line react/prop-types
-function Projects({ language }) {
-  const { color } = useSelector((state) => state.theme);
+function Projects() {
+  const { color, language } = useSelector((state) => state.theme);
   return (
     <div className={`text-${color}-primary`}>
       <p

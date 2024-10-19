@@ -7,7 +7,7 @@ import Projects from "./Projects";
 import { useSelector } from "react-redux";
 
 // eslint-disable-next-line react/prop-types
-function Page({ language, myRef }) {
+function Page({ myRef }) {
   const { color } = useSelector((state) => state.theme);
   return (
     <>
@@ -18,12 +18,12 @@ function Page({ language, myRef }) {
         >
           <div className="flex">
             <div className="w-2/6">
-              <SideMenu language={language} />
+              <SideMenu />
             </div>
             <div ref={myRef} className="w-4/6 p-4 space-y-6">
               <Header />
-              <AboutMe language={language} />
-              <Experience language={language} />
+              <AboutMe />
+              <Experience />
             </div>
           </div>
         </div>
@@ -34,8 +34,8 @@ function Page({ language, myRef }) {
           <div
             className={`bg-${color}-base w-[200mm] h-[287mm] rounded-lg p-4`}
           >
-            <Projects language={language} />
-            <References language={language} />
+            <Projects />
+            <References />
           </div>
         </div>
       </div>

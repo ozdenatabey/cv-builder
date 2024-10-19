@@ -7,12 +7,7 @@ import { useReactToPrint } from "react-to-print";
 import { useSelector } from "react-redux";
 
 function App() {
-  const { color } = useSelector((state) => state.theme);
-  // DİL SEÇİMİ
-  const [language, setLanguage] = useState("tr");
-  const handleLanguageSelect = (lang) => {
-    setLanguage(lang);
-  };
+  const { color, language } = useSelector((state) => state.theme);
   // SAYFA YÜKSEKLİK HESABI VE İKİNCİ SAYFAYI OTOMATİK OLUŞTURMA
   const [pageCount, setPageCount] = useState(1);
   const myRef = useRef();
@@ -43,14 +38,14 @@ function App() {
   return (
     <div className="bg-gray-100">
       <div className="absolute right-10 top-4">
-        <LanguageSelect onClick={handleLanguageSelect} />
+        <LanguageSelect />
       </div>
       <div className="grid place-content-center">
-        <ColorPicker language={language} />
+        <ColorPicker />
       </div>
       <main className=" flex justify-between">
         <section id="leftSide" className="w-2/5">
-          <Form language={language} />
+          <Form />
           <div className="flex justify-center my-4">
             <button
               onClick={reactToPrintFn}
@@ -62,7 +57,7 @@ function App() {
         </section>
         <section id="rightSide" className="w-3/5">
           <div ref={pageRef} className="grid place-items-center">
-            <Page language={language} myRef={myRef} pageCount={pageCount} />
+            <Page myRef={myRef} pageCount={pageCount} />
           </div>
         </section>
       </main>

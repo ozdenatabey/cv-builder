@@ -12,7 +12,7 @@ function HeaderForm() {
   const { color } = useSelector((state) => state.theme);
   return (
     <div>
-      <form className="mx-4 space-y-2 border border-black p-4 rounded-lg shadow-lg">
+      <form className="mx-4 space-y-2 bg-stone-300 border border-black p-4 rounded-lg shadow-lg">
         <p
           className={`text-center font-semibold bg-${color}-primary p-1 rounded-md text-white`}
         >
