@@ -9,17 +9,19 @@ function HeaderForm() {
   const handleTitleChange = (event) => {
     dispatch(setTitle(event.target.value));
   };
-  const { color } = useSelector((state) => state.theme);
+  const { color, language } = useSelector((state) => state.theme);
   return (
     <div>
       <form className="mx-4 space-y-2 bg-stone-300 border border-black p-4 rounded-lg shadow-lg">
         <p
-          className={`text-center font-semibold bg-${color}-primary p-1 rounded-md text-white`}
+          className={`text-center font-semibold bg-${color}-primary p-1 rounded text-white`}
         >
-          Header
+          {language === "tr" ? "Başlık" : "Header"}
         </p>
         <div>
-          <label className="font-semibold">Name</label>
+          <label className="font-semibold">
+            {language === "tr" ? "İsim" : "Name"}
+          </label>
           <input
             type="text"
             className={`w-full border border-black rounded p-2`}
@@ -27,7 +29,9 @@ function HeaderForm() {
           />
         </div>
         <div>
-          <label className="font-semibold">Title</label>
+          <label className="font-semibold">
+            {language === "tr" ? "Ünvan" : "Title"}
+          </label>
           <input
             type="text"
             className={`w-full border border-black rounded p-2`}

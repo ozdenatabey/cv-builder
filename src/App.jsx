@@ -37,23 +37,19 @@ function App() {
 
   return (
     <div className="bg-gray-100">
-      <div className="absolute right-10 top-4">
-        <LanguageSelect />
-      </div>
-      <div className="grid place-content-center">
+      <div className="flex justify-evenly items-center">
+        <button
+          onClick={reactToPrintFn}
+          className={`bg-${color}-primary text-white font-semibold text-lg w-36 py-3 rounded-lg hover:shadow-lg hover:shadow-black/50 active:scale-[0.97]`}
+        >
+          {language === "en" ? "Download" : "İndir"}
+        </button>
         <ColorPicker />
+        <LanguageSelect />
       </div>
       <main className=" flex justify-between">
         <section id="leftSide" className="w-2/5">
           <Form />
-          <div className="flex justify-center my-4">
-            <button
-              onClick={reactToPrintFn}
-              className={`bg-${color}-primary text-white font-semibold text-lg w-36 py-3 rounded-lg hover:shadow-lg hover:shadow-black/50 active:scale-[0.97]`}
-            >
-              {language === "en" ? "Download" : "İndir"}
-            </button>
-          </div>
         </section>
         <section id="rightSide" className="w-3/5">
           <div ref={pageRef} className="grid place-items-center">

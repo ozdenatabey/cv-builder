@@ -11,7 +11,7 @@ function Page({ myRef }) {
   const { color } = useSelector((state) => state.theme);
   return (
     <>
-      <div className="space-y-6">
+      <div className="space-y-6 h-screen overflow-scroll">
         <div
           id="page1"
           className={`bg-${color}-base h-[297mm] w-[210mm] shadow shadow-black overflow-hidden`}
