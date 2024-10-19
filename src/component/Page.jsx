@@ -11,7 +11,7 @@ function Page({ myRef }) {
   const { color } = useSelector((state) => state.theme);
   return (
     <>
-      <div className="space-y-6 h-screen overflow-scroll">
+      <div>
         <div
           id="page1"
           className={`bg-${color}-base h-[297mm] w-[210mm] shadow shadow-black overflow-hidden`}
@@ -29,7 +29,7 @@ function Page({ myRef }) {
         </div>
         <div
           id="page2"
-          className={`bg-${color}-primary mb-6 h-[297mm] w-[210mm] grid place-items-center shadow shadow-black overflow-hidden`}
+          className={`bg-${color}-primary h-[297mm] w-[210mm] grid place-items-center shadow shadow-black overflow-hidden`}
         >
           <div
             className={`bg-${color}-base w-[200mm] h-[287mm] rounded-lg p-4`}

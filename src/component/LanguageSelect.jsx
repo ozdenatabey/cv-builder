@@ -12,7 +12,7 @@ function LanguageSelect() {
     <div>
       <div className="flex space-x-2">
         <img
-          className="w-16 border-2 border-black rounded-lg cursor-pointer hover:shadow-md hover:shadow-black"
+          className="w-16 border-2 border-black rounded-lg cursor-pointer hover:shadow-lg hover:shadow-gray-400 duration-200 transition-all"
           src={trFlag}
           alt="tr"
           onClick={() => {
@@ -20,7 +20,7 @@ function LanguageSelect() {
           }}
         />
         <img
-          className="w-16 border-2 border-black rounded-lg cursor-pointer hover:shadow-md hover:shadow-black"
+          className="w-16 border-2 border-black rounded-lg cursor-pointer hover:shadow-lg hover:shadow-gray-400 duration-200 transition-all"
           src={enFlag}
           alt="en"
           onClick={() => {

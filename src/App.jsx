@@ -4,10 +4,9 @@ import LanguageSelect from "./component/LanguageSelect";
 import Form from "./component/Form";
 import Page from "./component/Page";
 import { useReactToPrint } from "react-to-print";
-import { useSelector } from "react-redux";
+import { FaFileDownload } from "react-icons/fa";
 
 function App() {
-  const { color, language } = useSelector((state) => state.theme);
   // SAYFA YÜKSEKLİK HESABI VE İKİNCİ SAYFAYI OTOMATİK OLUŞTURMA
   const [pageCount, setPageCount] = useState(1);
   const myRef = useRef();
@@ -36,22 +35,22 @@ function App() {
   });
 
   return (
-    <div className="bg-gray-100">
-      <div className="flex justify-evenly items-center">
-        <button
-          onClick={reactToPrintFn}
-          className={`bg-${color}-primary text-white font-semibold text-lg w-36 py-3 rounded-lg hover:shadow-lg hover:shadow-black/50 active:scale-[0.97]`}
-        >
-          {language === "en" ? "Download" : "İndir"}
-        </button>
+    <div className="bg-gray-50">
+      <div className="flex justify-evenly items-center w-full shadow-lg bg-gray-50 z-10 mb-6 sticky top-0">
+        <div className="flex justify-center items-center space-x-6">
+          <LanguageSelect />
+          <FaFileDownload
+            onClick={reactToPrintFn}
+            className="size-8 text-emerald-800 hover:translate-y-1 duration-200 transition-all hover:text-emerald-600 hover:cursor-pointer"
+          />
+        </div>
         <ColorPicker />
-        <LanguageSelect />
       </div>
-      <main className=" flex justify-between">
+      <main className="flex justify-evenly">
         <section id="leftSide" className="w-2/5">
           <Form />
         </section>
-        <section id="rightSide" className="w-3/5">
+        <section id="rightSide">
           <div ref={pageRef} className="grid place-items-center">
             <Page myRef={myRef} pageCount={pageCount} />
           </div>
