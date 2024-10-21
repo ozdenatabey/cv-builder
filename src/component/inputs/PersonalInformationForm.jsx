@@ -68,124 +68,132 @@ function PersonalInformationForm() {
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Konum" : "Location"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleLocation}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleLocation}
-          />
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Telefon" : "Phone"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handlePhone}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handlePhone}
-          />
         </div>
         <div>
-          <label className="font-semibold">Mail</label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleMail}
-          />
+          <label className="font-semibold">
+            Mail
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleMail}
+            />
+          </label>
         </div>
         <div>
-          <label className="font-semibold">Linkedin</label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleLinkedin}
-          />
+          <label className="font-semibold">
+            Linkedin
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleLinkedin}
+            />
+          </label>
         </div>
         <div>
-          <label className="font-semibold">Github</label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleGithub}
-          />
+          <label className="font-semibold">
+            Github
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleGithub}
+            />
+          </label>
         </div>
         <div>
-          <label className="font-semibold">Web Site</label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleWebsite}
-          />
+          <label className="font-semibold">
+            Web Site
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleWebsite}
+            />
+          </label>
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Üniversite" : "University"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleUniversityName}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleUniversityName}
-          />
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Mezuniyet" : "Graduation"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleUniversityStatus}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleUniversityStatus}
-          />
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Doğum Tarihi" : "Date Of Birth"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleDateOfBirth}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleDateOfBirth}
-          />
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Uyruk" : "Nationality"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleNationality}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleNationality}
-          />
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Engellilik" : "Disability"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleDisability}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleDisability}
-          />
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Sürücü Belgesi" : "Driving License"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleDrivingLicense}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleDrivingLicense}
-          />
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Askerlik Hizmeti" : "Military Service"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleMilitary}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleMilitary}
-          />
         </div>
       </form>
     </div>

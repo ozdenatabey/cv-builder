@@ -21,22 +21,22 @@ function HeaderForm() {
         <div>
           <label className="font-semibold">
             {language === "tr" ? "İsim" : "Name"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleNameChange}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleNameChange}
-          />
         </div>
         <div>
           <label className="font-semibold">
             {language === "tr" ? "Ünvan" : "Title"}
+            <input
+              type="text"
+              className={`w-full border border-black rounded p-2`}
+              onChange={handleTitleChange}
+            />
           </label>
-          <input
-            type="text"
-            className={`w-full border border-black rounded p-2`}
-            onChange={handleTitleChange}
-          />
         </div>
       </form>
     </div>
