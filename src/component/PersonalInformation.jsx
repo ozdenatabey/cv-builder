@@ -17,6 +17,8 @@ import { useSelector } from "react-redux";
 
 function PersonalInformation() {
   const { color, language } = useSelector((state) => state.theme);
+  const { translatedText } = useSelector((state) => state.translate);
+  const { translateButton } = useSelector((state) => state.translateButton);
   const {
     location,
     phone,
@@ -32,6 +34,7 @@ function PersonalInformation() {
     drivingLicense,
     military,
   } = useSelector((state) => state.personal);
+
   return (
     <div className={`text-${color}-base text-sm space-y-1 p-4`}>
       <p className="font-bold text-lg text-center underline underline-offset-2 mb-4">
@@ -40,7 +43,11 @@ function PersonalInformation() {
       {location ? (
         <div className="flex items-center">
           <PiMapPinFill className="mr-2" />
-          <p>{location}</p>
+          {translateButton === "on" ? (
+            <p>{translatedText}</p>
+          ) : (
+            <p>{location}</p>
+          )}
         </div>
       ) : (
         ""
@@ -48,7 +55,7 @@ function PersonalInformation() {
       {phone ? (
         <div className="flex items-center">
           <FaPhone className="mr-2" />
-          <p>{phone}</p>
+          {translateButton === "on" ? <p>{translatedText}</p> : <p>{phone}</p>}
         </div>
       ) : (
         ""

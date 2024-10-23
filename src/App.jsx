@@ -5,6 +5,7 @@ import Form from "./component/Form";
 import Page from "./component/Page";
 import { useReactToPrint } from "react-to-print";
 import { FaFileDownload } from "react-icons/fa";
+import TranslateButton from "./component/inputs/TranslateButton";
 
 function App() {
   // SAYFA YÜKSEKLİK HESABI VE İKİNCİ SAYFAYI OTOMATİK OLUŞTURMA
@@ -43,6 +44,9 @@ function App() {
             onClick={reactToPrintFn}
             className="size-8 text-emerald-800 hover:translate-y-1 duration-200 transition-all hover:text-emerald-600 hover:cursor-pointer"
           />
+        </div>
+        <div>
+          <TranslateButton />
         </div>
         <ColorPicker />
       </div>

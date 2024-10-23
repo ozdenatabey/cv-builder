@@ -14,49 +14,24 @@ import {
   setWebsite,
   setPhone,
 } from "../../redux/slices/personalInformationSlice";
+import { translateText, updateText } from "../../redux/slices/translateSlice";
 
 function PersonalInformationForm() {
   const { color, language } = useSelector((state) => state.theme);
+  const { translateButton } = useSelector((state) => state.translateButton);
   const dispatch = useDispatch();
-  const handleDateOfBirth = (event) => {
-    dispatch(setDateOfBirth(event.target.value));
+
+  const handleChange = (setter) => (event) => {
+    const value = event.target.value;
+
+    dispatch(setter(value));
+    dispatch(updateText(value));
+
+    if (translateButton === "on" && value) {
+      dispatch(translateText(value));
+    }
   };
-  const handleDisability = (event) => {
-    dispatch(setDisability(event.target.value));
-  };
-  const handleDrivingLicense = (event) => {
-    dispatch(setDrivingLicense(event.target.value));
-  };
-  const handleGithub = (event) => {
-    dispatch(setGithub(event.target.value));
-  };
-  const handleLinkedin = (event) => {
-    dispatch(setLinkedin(event.target.value));
-  };
-  const handleLocation = (event) => {
-    dispatch(setLocation(event.target.value));
-  };
-  const handleMail = (event) => {
-    dispatch(setMail(event.target.value));
-  };
-  const handleMilitary = (event) => {
-    dispatch(setMilitary(event.target.value));
-  };
-  const handleNationality = (event) => {
-    dispatch(setNationality(event.target.value));
-  };
-  const handleUniversityName = (event) => {
-    dispatch(setUniversityName(event.target.value));
-  };
-  const handleUniversityStatus = (event) => {
-    dispatch(setUniversityStatus(event.target.value));
-  };
-  const handleWebsite = (event) => {
-    dispatch(setWebsite(event.target.value));
-  };
-  const handlePhone = (event) => {
-    dispatch(setPhone(event.target.value));
-  };
+
   return (
     <div>
       <form className="mx-4 space-y-2 bg-stone-300 border border-black p-4 rounded-lg shadow-lg">
@@ -71,7 +46,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleLocation}
+              onChange={handleChange(setLocation)}
             />
           </label>
         </div>
@@ -81,7 +56,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handlePhone}
+              onChange={handleChange(setPhone)}
             />
           </label>
         </div>
@@ -91,7 +66,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleMail}
+              onChange={handleChange(setMail)}
             />
           </label>
         </div>
@@ -101,7 +76,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleLinkedin}
+              onChange={handleChange(setLinkedin)}
             />
           </label>
         </div>
@@ -111,7 +86,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleGithub}
+              onChange={handleChange(setGithub)}
             />
           </label>
         </div>
@@ -121,7 +96,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleWebsite}
+              onChange={handleChange(setWebsite)}
             />
           </label>
         </div>
@@ -131,7 +106,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleUniversityName}
+              onChange={handleChange(setUniversityName)}
             />
           </label>
         </div>
@@ -141,7 +116,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleUniversityStatus}
+              onChange={handleChange(setUniversityStatus)}
             />
           </label>
         </div>
@@ -151,7 +126,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleDateOfBirth}
+              onChange={handleChange(setDateOfBirth)}
             />
           </label>
         </div>
@@ -161,7 +136,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleNationality}
+              onChange={handleChange(setNationality)}
             />
           </label>
         </div>
@@ -171,7 +146,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleDisability}
+              onChange={handleChange(setDisability)}
             />
           </label>
         </div>
@@ -181,7 +156,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleDrivingLicense}
+              onChange={handleChange(setDrivingLicense)}
             />
           </label>
         </div>
@@ -191,7 +166,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleMilitary}
+              onChange={handleChange(setMilitary)}
             />
           </label>
         </div>
