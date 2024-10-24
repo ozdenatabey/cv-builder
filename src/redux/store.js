@@ -4,6 +4,7 @@ import themeReducer from "./slices/themeSlice";
 import personalInformationReducer from "./slices/personalInformationSlice";
 import translateReducer from "./slices/translateSlice";
 import translateButtonReducer from "./slices/translateButtonSlice";
+import skillReducer from "./slices/skillSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     personal: personalInformationReducer,
     translate: translateReducer,
     translateButton: translateButtonReducer,
+    skill: skillReducer,
   },
 });

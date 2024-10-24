@@ -1,6 +1,7 @@
 import HeaderForm from "./inputs/HeaderForm";
 import ImageForm from "./inputs/ImageForm";
 import PersonalInformationForm from "./inputs/PersonalInformationForm";
+import SkillFrom from "./inputs/SkillFrom";
 
 function Form() {
   return (
@@ -8,6 +9,7 @@ function Form() {
       <ImageForm />
       <HeaderForm />
       <PersonalInformationForm />
+      <SkillFrom />
     </div>
   );
 }

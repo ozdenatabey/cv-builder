@@ -4,9 +4,8 @@ import { engineeringTools, programmingTools } from "../data/userData";
 import { FaCode, FaGear } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 
-// eslint-disable-next-line react/prop-types
-function Skills({ language }) {
-  const { color } = useSelector((state) => state.theme);
+function Skills() {
+  const { color, language } = useSelector((state) => state.theme);
   return (
     <div className={`text-${color}-base mx-4 space-y-4`}>
       <p className="text-center text-lg font-bold underline underline-offset-2">
