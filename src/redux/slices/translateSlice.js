@@ -6,11 +6,17 @@ const initialState = {
   status: "idle",
   translatedText: "",
   error: null,
+  disability: "",
+  translatedDisability: "",
+  drivingLicense: "",
+  translatedDrivingLicense: "",
+  military: "",
+  translatedMilitary: "",
 };
 
 export const translateText = createAsyncThunk(
   "translate/translateText",
-  async (text) => {
+  async ({ text, field }) => {
     const options = {
       method: "POST",
       url: "https://deep-translate1.p.rapidapi.com/language/translate/v2",
@@ -28,7 +34,10 @@ export const translateText = createAsyncThunk(
 
     try {
       const response = await axios.request(options);
-      return response.data.data.translations.translatedText;
+      return {
+        translatedText: response.data.data.translations.translatedText,
+        field,
+      };
     } catch (error) {
       console.error("API çağrılırken hata oluştu", error);
       throw error;
@@ -55,7 +64,19 @@ export const translateSlice = createSlice({
       })
       .addCase(translateText.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.translatedText = action.payload;
+        const { translatedText, field } = action.payload;
+
+        switch (field) {
+          case "disability":
+            state.translatedDisability = translatedText;
+            break;
+          case "drivingLicense":
+            state.translatedDrivingLicense = translatedText;
+            break;
+          case "military":
+            state.translatedMilitary = translatedText;
+            break;
+        }
       })
       .addCase(translateText.rejected, (state, action) => {
         state.status = "failed";

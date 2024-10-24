@@ -21,14 +21,15 @@ function PersonalInformationForm() {
   const { translateButton } = useSelector((state) => state.translateButton);
   const dispatch = useDispatch();
 
-  const handleChange = (setter) => (event) => {
+  const handleChange = (setter, field) => (event) => {
     const value = event.target.value;
 
     dispatch(setter(value));
-    dispatch(updateText(value));
 
     if (translateButton === "on" && value) {
-      dispatch(translateText(value));
+      dispatch(translateText({ text: value, field }));
+    } else {
+      dispatch(updateText(value));
     }
   };
 
@@ -146,7 +147,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleChange(setDisability)}
+              onChange={handleChange(setDisability, "disability")}
             />
           </label>
         </div>
@@ -156,7 +157,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleChange(setDrivingLicense)}
+              onChange={handleChange(setDrivingLicense, "drivingLicense")}
             />
           </label>
         </div>
@@ -166,7 +167,7 @@ function PersonalInformationForm() {
             <input
               type="text"
               className={`w-full border border-black rounded p-2`}
-              onChange={handleChange(setMilitary)}
+              onChange={handleChange(setMilitary, "military")}
             />
           </label>
         </div>

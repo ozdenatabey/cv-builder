@@ -17,7 +17,8 @@ import { useSelector } from "react-redux";
 
 function PersonalInformation() {
   const { color, language } = useSelector((state) => state.theme);
-  const { translatedText } = useSelector((state) => state.translate);
+  const { translatedDisability, translatedDrivingLicense, translatedMilitary } =
+    useSelector((state) => state.translate);
   const { translateButton } = useSelector((state) => state.translateButton);
   const {
     location,
@@ -43,11 +44,7 @@ function PersonalInformation() {
       {location ? (
         <div className="flex items-center">
           <PiMapPinFill className="mr-2" />
-          {translateButton === "on" ? (
-            <p>{translatedText}</p>
-          ) : (
-            <p>{location}</p>
-          )}
+          <p>{location}</p>
         </div>
       ) : (
         ""
@@ -55,7 +52,7 @@ function PersonalInformation() {
       {phone ? (
         <div className="flex items-center">
           <FaPhone className="mr-2" />
-          {translateButton === "on" ? <p>{translatedText}</p> : <p>{phone}</p>}
+          <p>{phone}</p>
         </div>
       ) : (
         ""
@@ -132,7 +129,11 @@ function PersonalInformation() {
           <p className="mr-2 font-semibold">
             {language === "en" ? "Disability:" : "Engellilik:"}
           </p>
-          <p>{disability}</p>
+          {translateButton === "on" ? (
+            <p>{translatedDisability}</p>
+          ) : (
+            <p>{disability}</p>
+          )}
         </div>
       ) : (
         ""
@@ -143,7 +144,11 @@ function PersonalInformation() {
           <p className="mr-2 font-semibold">
             {language === "en" ? "Driving License:" : "Sürücü Belgesi:"}
           </p>
-          <p>{drivingLicense}</p>
+          {translateButton === "on" ? (
+            <p>{translatedDrivingLicense}</p>
+          ) : (
+            <p>{drivingLicense}</p>
+          )}
         </div>
       ) : (
         ""
@@ -154,7 +159,11 @@ function PersonalInformation() {
           <p className="mr-2 font-semibold">
             {language === "en" ? "Military Service:" : "Askerlik Hizmeti:"}
           </p>
-          <p>{military}</p>
+          {translateButton === "on" ? (
+            <p>{translatedMilitary}</p>
+          ) : (
+            <p>{military}</p>
+          )}
         </div>
       ) : (
         ""
