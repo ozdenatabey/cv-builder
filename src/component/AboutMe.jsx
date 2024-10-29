@@ -1,9 +1,10 @@
 import { FaArrowCircleRight } from "react-icons/fa";
-import { aboutMe } from "../data/userData";
 import { useSelector } from "react-redux";
 
 function AboutMe() {
   const { color, language } = useSelector((state) => state.theme);
+  const abouts = useSelector((state) => state.about);
+
   return (
     <div className={`text-${color}-primary`}>
       <p
@@ -11,12 +12,14 @@ function AboutMe() {
       >
         {language === "en" ? "ABOUT ME" : "HAKKIMDA"}
       </p>
-      {aboutMe.map((property) => (
-        <div key={property.id} className="flex items-center space-x-2 ">
-          <FaArrowCircleRight className={`text-${color}-header`} />
-          <p>{property.name}</p>
-        </div>
-      ))}
+      {abouts.length > 0
+        ? abouts.map((about) => (
+            <div key={about.id} className="flex items-center space-x-2 ">
+              <FaArrowCircleRight className={`text-${color}-header`} />
+              <p>{about.name}</p>
+            </div>
+          ))
+        : ""}
     </div>
   );
 }
