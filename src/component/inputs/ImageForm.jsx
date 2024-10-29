@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setPhoto } from "../../redux/slices/formSlice";
+import { Accordion, AccordionItem } from "@szhsin/react-accordion";
+import { IoIosArrowDown } from "react-icons/io";
 
 function ImageForm() {
   const dispatch = useDispatch();
@@ -15,7 +17,15 @@ function ImageForm() {
       >
         {language === "tr" ? "Profil Resmi" : "Profile Picture"}
       </p>
-      <input type="file" onChange={handleChange} accept=".jpg, .jpeg, .png" />
+      <Accordion>
+        <AccordionItem header={<IoIosArrowDown />}>
+          <input
+            type="file"
+            onChange={handleChange}
+            accept=".jpg, .jpeg, .png"
+          />
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 }
