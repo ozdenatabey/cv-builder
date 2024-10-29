@@ -1,33 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-function generateUUID() {
-  return "xxxxxxxx".replace(/[xy]/g, function (c) {
-    var r = (Math.random() * 16) | 0,
-      v = c == "x" ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
-}
-
-const initialState = [
-  {
-    id: generateUUID(),
-    name: "",
-    level: "",
-  },
-];
+const initialState = [];
 
 export const skillSlice = createSlice({
   name: "skill",
   initialState,
   reducers: {
-    setSkillName: (state, action) => {
-      state.name = action.payload;
+    addSkill: (state, action) => {
+      state.push(action.payload);
+    },
+    removeSkill: (state, action) => {
+      return state.filter((skill) => skill.id !== action.payload);
+    },
+    setSkillName(state, action) {
+      const skill = state.find((skill) => skill.id === action.payload.id);
+      if (skill) {
+        skill.name = action.payload.name;
+      }
     },
     setSkillLevel: (state, action) => {
-      state.level = action.payload;
+      const skill = state.find((skill) => skill.id === action.payload.id);
+      if (skill) {
+        skill.level = action.payload.level;
+      }
     },
   },
 });
 
-export const { setSkillName, setSkillLevel } = skillSlice.actions;
+export const { addSkill, removeSkill, setSkillLevel, setSkillName } =
+  skillSlice.actions;
 export default skillSlice.reducer;

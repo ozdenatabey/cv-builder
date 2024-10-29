@@ -6,26 +6,6 @@ function generateUUID() {
   });
 }
 
-export const header = {
-  name: "Özden Atabey",
-  jobTitle: "Mechanical Engineer | Frontend Developer | Business Analyst",
-};
-
-export const personalInformation = {
-  location: "İstanbul/Büyükçekmece",
-  phone: "+90 543 287 58 18",
-  mail: "ozdenatabey@hotmail.com",
-  linkedin: "linkedin.com/in/ozdenatabey",
-  github: "github.com/ozdenatabey",
-  universityName: "Akdeniz University",
-  universityStatus: "Bachelor Degree / 2020",
-  dateOfBirth: "29/10/1993",
-  nationality: "Turkish",
-  disability: "None",
-  drivingLicense: "Yes",
-  military: "Completed",
-};
-
 export const aboutMe = [
   {
     id: generateUUID(),
@@ -42,77 +22,6 @@ export const aboutMe = [
   {
     id: generateUUID(),
     name: "Strong communication",
-  },
-];
-
-export const engineeringTools = [
-  {
-    id: generateUUID(),
-    name: "Autocad",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "Inventor",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "Solidworks",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "Rhinoceros",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "Sprutcam",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "Fusion360",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "CATIA",
-    level: 3,
-  },
-  {
-    id: generateUUID(),
-    name: "Siemens NX",
-    level: 3,
-  },
-  {
-    id: generateUUID(),
-    name: "Ansys",
-    level: 2,
-  },
-];
-
-export const programmingTools = [
-  {
-    id: generateUUID(),
-    name: "MS Office Tools",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "Tailwind CSS",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "CSS / SCSS",
-    level: 5,
-  },
-  {
-    id: generateUUID(),
-    name: "React JS",
-    level: 4,
   },
 ];
 
