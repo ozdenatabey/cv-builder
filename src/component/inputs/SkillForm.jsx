@@ -59,7 +59,7 @@ function SkillForm() {
           </div>
           {skills.length > 0
             ? skills.map((skill, index) => (
-                <div key={index} className="grid grid-cols-4 gap-2">
+                <div key={index} className="grid grid-cols-4 gap-2 mb-2">
                   <label className="font-semibold col-span-2" id="skill-name">
                     <input
                       type="text"

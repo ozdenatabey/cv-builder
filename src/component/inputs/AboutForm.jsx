@@ -49,7 +49,7 @@ function AboutForm() {
         <AccordionItem header={<IoIosArrowDown />}>
           {abouts.length > 0
             ? abouts.map((about, index) => (
-                <div key={index} className="flex space-x-2">
+                <div key={index} className="flex space-x-2 mb-2">
                   <label id="skill-name" className="grow">
                     <input
                       type="text"

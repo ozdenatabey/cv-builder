@@ -1,88 +1,10 @@
 function generateUUID() {
   return "xxxxxxxx".replace(/[xy]/g, function (c) {
-    var r = (Math.random() * 16) | 0,
-      v = c == "x" ? r : (r & 0x3) | 0x8;
+    let r = (Math.random() * 16) | 0,
+      v = c === "x" ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
 }
-
-export const aboutMe = [
-  {
-    id: generateUUID(),
-    name: "Curious about new technologies",
-  },
-  {
-    id: generateUUID(),
-    name: "Researcher",
-  },
-  {
-    id: generateUUID(),
-    name: "Solution oriented",
-  },
-  {
-    id: generateUUID(),
-    name: "Strong communication",
-  },
-];
-
-export const experiences = [
-  {
-    id: generateUUID(),
-    year: "May.2024/Present",
-    title: "Business Analyst",
-    company: "TMMOB Makina Mühendisleri Odası",
-    content:
-      "I used these software: Jira to plan development steps, Figma and Draw.io for design templates and MS Office Tools to record data. I learned Development Life Cycle and Agile Methodology.",
-  },
-  {
-    id: generateUUID(),
-    year: "Nov.2021/May.2024",
-    title: "CAD/CAM Engineer",
-    company: "Avenco Robotics & Automation",
-    content:
-      "I used these software: Solidworks and Rhinoceros (Grasshopper) for designing, Sprutcam and Fusion360 to generate NC code and control KUKA Robots. I learned how conveyor systems work, additive manufacturing and milling with industrial robots.",
-  },
-  {
-    id: generateUUID(),
-    year: "Oct.2020/Nov.2021",
-    title: "Manufacturing & CAD Engineer",
-    company: "Efasan Tıbbi İmplant ve Cihaz Sanayi",
-    content:
-      "I used these software: Solidworks, Inventor and AutoCad for design systems and create drawings, CypCut to generate NC code to laser cutting machine. I learned how laser machines work, bending sheet metals and stainless steel characteristics.",
-  },
-  {
-    id: generateUUID(),
-    year: "Dec.2018/Jul.2019",
-    title: "Manufacturing & CAD Engineer",
-    company: "Crystal Industrial (Part Time)",
-    content:
-      "I used these software: Inventor and AutoCad for design systems and create drawings. I learned how awning systems work and the properties of aluminum alloys.",
-  },
-  // {
-  //   id: generateUUID(),
-  //   year: "Oct.2020/Nov.2021",
-  //   title: "Manufacturing & CAD Engineer",
-  //   company: "Efasan Tıbbi İmplant ve Cihaz Sanayi",
-  //   content:
-  //     "I used these software: Solidworks, Inventor and AutoCad for design systems and create drawings, CypCut to generate NC code to laser cutting machine. I learned how laser machines work, bending sheet metals and stainless steel characteristics.",
-  // },
-  // {
-  //   id: generateUUID(),
-  //   year: "Oct.2020/Nov.2021",
-  //   title: "Manufacturing & CAD Engineer",
-  //   company: "Efasan Tıbbi İmplant ve Cihaz Sanayi",
-  //   content:
-  //     "I used these software: Solidworks, Inventor and AutoCad for design systems and create drawings, CypCut to generate NC code to laser cutting machine. I learned how laser machines work, bending sheet metals and stainless steel characteristics.",
-  // },
-  // {
-  //   id: generateUUID(),
-  //   year: "Oct.2020/Nov.2021",
-  //   title: "Manufacturing & CAD Engineer",
-  //   company: "Efasan Tıbbi İmplant ve Cihaz Sanayi",
-  //   content:
-  //     "I used these software: Solidworks, Inventor and AutoCad for design systems and create drawings, CypCut to generate NC code to laser cutting machine. I learned how laser machines work, bending sheet metals and stainless steel characteristics.",
-  // },
-];
 
 export const projects = [
   {
