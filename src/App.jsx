@@ -45,9 +45,9 @@ function App() {
             className="size-8 text-emerald-800 hover:translate-y-1 duration-200 transition-all hover:text-emerald-600 hover:cursor-pointer"
           />
         </div>
-        <div>
-          <TranslateButton />
-        </div>
+        {/*<div>*/}
+        {/*  <TranslateButton />*/}
+        {/*</div>*/}
         <ColorPicker />
       </div>
       <main className="flex justify-evenly">

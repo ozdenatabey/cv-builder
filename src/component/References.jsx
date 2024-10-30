@@ -1,9 +1,9 @@
 import { FaArrowRightLong } from "react-icons/fa6";
-import { references } from "../data/userData";
 import { useSelector } from "react-redux";
 
 function References() {
   const { color, language } = useSelector((state) => state.theme);
+  const references = useSelector((state) => state.reference);
   return (
     <div className={`text-${color}-primary`}>
       <p

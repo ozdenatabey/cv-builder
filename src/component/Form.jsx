@@ -5,6 +5,7 @@ import SkillForm from "./inputs/SkillForm.jsx";
 import AboutForm from "./inputs/AboutForm.jsx";
 import ExperienceForm from "./inputs/ExperienceForm.jsx";
 import ProjectForm from "./inputs/ProjectForm.jsx";
+import ReferenceForm from "./inputs/ReferenceForm.jsx";
 
 function Form() {
   return (
@@ -16,6 +17,7 @@ function Form() {
       <AboutForm />
       <ExperienceForm />
       <ProjectForm />
+      <ReferenceForm />
     </div>
   );
 }
