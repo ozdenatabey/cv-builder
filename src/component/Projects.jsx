@@ -1,8 +1,8 @@
-import { projects } from "../data/userData";
 import { useSelector } from "react-redux";
 
 function Projects() {
   const { color, language } = useSelector((state) => state.theme);
+  const projects = useSelector((state) => state.project);
   return (
     <div className={`text-${color}-primary`}>
       <p

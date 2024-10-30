@@ -7,6 +7,7 @@ import translateButtonReducer from "./slices/translateButtonSlice";
 import skillReducer from "./slices/skillSlice";
 import aboutReducer from "./slices/aboutSlice";
 import experienceReducer from "./slices/experienceSlice";
+import projectReducer from "./slices/projectSlice";
 
 export const store = configureStore({
   reducer: {
@@ -18,5 +19,6 @@ export const store = configureStore({
     skill: skillReducer,
     about: aboutReducer,
     experience: experienceReducer,
+    project: projectReducer,
   },
 });
